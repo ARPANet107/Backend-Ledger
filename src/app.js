@@ -17,6 +17,12 @@ app.use(cookieParser());
 /**
  * - use Routes
  */
+app.get("/", (req, res) => {
+  res.json({ status: "ok", message: "Backend Ledger API is running" });
+});
+
+
+
 app.use("/api/auth", authRouter);
 app.use("/api/accounts", accountRouter);
 app.use("/api/transactions", transactionRoutes);
